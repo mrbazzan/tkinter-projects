@@ -20,7 +20,7 @@ btn_save.pack(fill=tk.X, padx=5, pady=5)
 txt_edit = tk.Text(master=right_frame)
 txt_edit.pack(fill=tk.BOTH, expand=True)
 
-left_frame.grid(row=0, column=0, sticky="nsew")
+left_frame.grid(row=0, column=0, sticky="ns")
 right_frame.grid(row=0, column=1, sticky="nsew")
 
 window.mainloop()
