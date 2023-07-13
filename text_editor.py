@@ -5,7 +5,7 @@ import tkinter as tk
 window = tk.Tk()
 window.wm_title("TEXT EDITOR")
 
-window.rowconfigure(0, weight=1)
+window.rowconfigure(0, weight=1, minsize=800)
 window.columnconfigure(1, weight=1, minsize=800)
 
 left_frame = tk.Frame(master=window)
