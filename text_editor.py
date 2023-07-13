@@ -21,6 +21,23 @@ def open_file():
     window.title(f"TEXT EDITOR - {filepath}")
 
 
+def save_file():
+    filepath = asksaveasfilename(
+        filetypes=[
+            ("Text Files", "*.txt"),
+            ("All Files", "*.*")
+        ]
+    )
+    if not filepath:
+        return
+
+    with open(filepath, mode="w") as output_file:
+        text = txt_edit.get("1.0", tk.END)
+        output_file.write(text)
+
+    window.title(f"TEXT EDITOR - {filepath}")
+
+
 window = tk.Tk()
 window.title("TEXT EDITOR")
 
@@ -31,7 +48,7 @@ left_frame = tk.Frame(master=window, relief=tk.RAISED, borderwidth=2)
 right_frame = tk.Frame(master=window)
 
 btn_open = tk.Button(text="OPEN", master=left_frame, command=open_file)
-btn_save = tk.Button(text="SAVE AS", master=left_frame)
+btn_save = tk.Button(text="SAVE AS", master=left_frame, command=save_file)
 
 btn_open.pack(fill=tk.X, padx=5, pady=5)
 btn_save.pack(fill=tk.X, padx=5, pady=5)
